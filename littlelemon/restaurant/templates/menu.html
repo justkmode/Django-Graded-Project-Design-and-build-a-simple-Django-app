@@ -1,0 +1,17 @@
+{% extends 'base.html' %}  <!-- Adjust if you have a base template -->
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<div class="column">
+    {% if menu %}
+        {% for item in menu %}
+        <p>
+            <a href="{% url 'menu_item' pk=item.pk %}">{{ item.name }}</a>
+            <span class="menu-price">${{ item.price }}.00</span>  <!-- Assuming you have a price field -->
+        </p>
+        {% endfor %}
+    {% else %}
+        <p>No menu items available.</p>
+    {% endif %}
+</div>
+{% endblock %}
