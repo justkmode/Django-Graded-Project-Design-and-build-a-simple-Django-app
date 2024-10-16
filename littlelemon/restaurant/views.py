@@ -11,7 +11,7 @@ def about(request):
     return render(request, 'about.html')
 
 def menu(request):
-    menu_items = Menu.objects.all()  # Fetch all menu items
+    menu_items = Menu.objects.all().order_by('name')  # Ordering by 'name'
     context = {'menu': menu_items}
     return render(request, 'menu.html', context)
 
