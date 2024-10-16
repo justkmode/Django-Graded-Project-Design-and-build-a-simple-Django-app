@@ -78,10 +78,16 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'menu_db',  # Your MySQL database name
+        'USER': 'jukr',  # The new MySQL user you created
+        'PASSWORD': 'just5000',  # The password for the new user
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
+
 
 # The settings for media files have been updated for the Graded assessment
 MEDIA_URL = '/media/'
